@@ -1,0 +1,74 @@
+/* Sección sobre mí */
+#sobremi {
+    max-width: 1100px;
+    margin: auto;
+    padding: 100px 15px;
+    color: #111135;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra el contenido horizontalmente */
+}
+
+#sobremi .contenedor__foto {
+    max-width: 200px; /* Reduce el ancho del contenedor de la foto */
+    margin-bottom: 20px; /* Añade espacio entre la foto y el contenido de texto */
+}
+
+#sobremi .contenedor__foto img {
+    width: 100%; /* Ajusta el ancho de la imagen al contenedor */
+    max-width: 100%; /* Ajusta el ancho máximo de la imagen */
+    border-radius: 20px;
+    background-color: #fefefe;
+}
+
+#sobremi .sobremi .titulo__seccion {
+    font-size: 22px;
+    text-transform: uppercase;
+    color: #111135;
+    text-decoration: underline;
+    text-decoration-color: #d3d3d3;
+    text-decoration-thickness: 5px;
+    margin-bottom: 20px; /* Añade espacio después del título */
+}
+
+#sobremi .sobremi h1 { /* Usa h1 en lugar de h2 para el texto principal */
+    font-size: 34px;
+    font-weight: bold;
+    margin: 20px 0;
+    letter-spacing: 2px;
+}
+
+#sobremi .sobremi .span {
+    color: #FF0000;
+}
+
+#sobremi .subtitulo {
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+#sobremi .parrafo__sobremi {
+    font-size: 14px;
+    line-height: 25px;
+    color: #565656;
+    margin-bottom: 12px;
+}
+
+#sobremi .sobremi__cv {
+    text-decoration: none;
+    color: #000;
+    border-radius: 30px;
+    padding: 10px 20px;
+    border: 1px solid #000;
+    margin-top: 30px;
+    transition: 0.5s;
+    display: inline-block;
+}
+
+#sobremi .sobremi__cv:hover {
+    background-color: #FF0000;
+    color: #fff;
+}
