@@ -1,0 +1,23 @@
+/*css dl footer*/
+footer{
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+}
+
+footer a {
+    text-decoration: none;
+    color:#fff;
+    display: inline-block;
+    margin: 5px;
+    font-size: 26px;
+}
+
+/* Estilos responsive */
+@media only screen and (max-width: 768px) {
+    /* Ajustar el tamaño de fuente en dispositivos móviles */
+    footer a {
+        font-size: 18px;
+    }
+}
