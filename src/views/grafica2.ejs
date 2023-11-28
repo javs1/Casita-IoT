@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grafica MQTT</title>
+    <link rel="stylesheet" href="./css/grafica2.css">
+    <link rel="stylesheet" href="./css/agua.css">
+    <link rel="stylesheet" href="./css/movement.css">
+    <script src="index.html"></script>
+</head>
+
+<div>
+    <header class="header">
+        <a href="#" class="Titulo">Datos MQTT</a>
+
+        <nav class="navbar">
+            <a href="./index.html">Inicio</a>
+        </nav>
+
+    </header>
+
+<section class="Inicio">
+    <h1>Datos:</h1>
+    <!--A qui va los datos de la tabla-->
+    <meta charset="UTF-8">
+    <!--<link rel="stylesheet" href="/css/agua.css"> -->
+    <div class="Home">
+    </div>
+    <title>Estado de puerta</title>
+</section> 
+
+<!--Nivel de agua-->
+
+
+<div class="box-container" id="box-container">
+    <!-- Contenedor donde se agregarán dinámicamente los datos -->
+        <div class="box">
+            <div class="content">
+                <% let actual = datos.length %>
+                <img src="./img/Hora.png"><p2>Fecha y Hora:</p2> 
+                <div class="fecha-hora">
+                    <span id="fecha"><%= datos[actual-1].fecha %></span>
+                    <span id="hora"><%= datos[actual-1].hora %></span>
+                </div>
+            <div class="Contenedor">
+                <h3><i class='bx bxs-purchase-tag-alt'></i> Puerta</h3>
+                <img src="./img/Puerta.jpg">
+                <% if(datos[actual-1].puerta === 'CE') { %>
+                    <!-- Si la puerta está abierta, cambia el color a verde -->
+                    <input type="checkbox" class="switch" id="puertaOb" checked style="border-color: green;">
+                <% } else { %>
+                    <!-- Si la puerta está cerrada, cambia el color a rojo -->
+                    <input type="checkbox" class="switch" id="puertaOb" style="border-color: red;">
+                <% } %>
+                <label for="puertaOb" class="switch-label" id="puertaSensor"><%= datos[actual-1].puerta %></label>
+                
+            
+                <h3><i class='bx bxs-purchase-tag-alt'></i> movimiento</h3>
+                <% if(datos[actual-1].movimiento === 'N0') { %>
+                    <!-- Si el movimiento está encendido, cambia el color a verde -->
+                    <img src="./img/Sensor.png" style="border-color: green;">
+                    <input type="checkbox" class="switch" id="movimientoOb" checked style="border-color: green;">
+                <% } else { %>
+                    <!-- Si el movimiento está apagado, cambia el color a rojo -->
+                    <img src="./img/Sensor.png" style="border-color: red;">
+                    <input type="checkbox" class="switch" id="movimientoOb" style="border-color: red;">
+                <% } %>
+                <label for="movimientoOb" class="switch-label" id="movimientoSensor"><%= datos[actual-1].movimiento %></label>
+            </div>
+                <div class="Contenedor2">
+                <h3><i class='bx bxs-purchase-tag-alt'></i> luz</h3>
+
+                <% if(datos[actual-1].luz === 'NO') { %>
+                    <!-- Si la luz está encendida, cambia el color a verde -->
+                    <img src="./img/Luz.png" style="border-color: green;">
+                    <input type="checkbox" class="switch" id="luzOb" checked style="border-color: green;">
+                <% } else { %>
+                    <!-- Si la luz está apagada, cambia el color a rojo -->
+                    <img src="./img/Luz.png" style="border-color: red;">
+                    <input type="checkbox" class="switch" id="luzOb" style="border-color: red;">
+                <% } %>
+                <label for="luzOb" class="switch-label" id="luzSensor"><%= datos[actual-1].luz %></label>
+
+                <h3><i class='bx bxs-purchase-tag-alt'></i> ventana</h3>
+
+                <% if(datos[actual-1].ventana === 'AB') { %>
+                    <!-- Si la ventana está cerrada, cambia el color a verde -->
+                    <img src="./img/Ventana.png" style="border-color: green;">
+                    <input type="checkbox" class="switch" id="ventanaOb" checked style="border-color: green;">
+                <% } else { %>
+                    <!-- Si la ventana está abierta, cambia el color a rojo -->
+                    <img src="./img/Ventana.png" style="border-color: red;">
+                    <input type="checkbox" class="switch" id="ventanaOb" style="border-color: red;">
+                <% } %>
+        
+                <label for="ventanaOb" class="switch-label" id="ventanaSensor"><%= datos[actual-1].ventana %></label>
+                
+            
+
+    <h3><i class='bx bxs-hourglass-bottom'></i> agua</h3>
+    <img src="./img/awa.png">
+    <span id="agua"><%= datos[actual-1].agua %></span>
+                </div>
+    
+            </div>
+           
+        </div>
+</div>
+
+
+<!--<h2>
+    <img src="/Graficas/Icons/Hora.png">
+</h2>
+<p>Hora: </p>
+<h3>
+    <img src="/Graficas/Icons/Fecha.png">
+</h3>-->
+
+<!--este es el del movimiento-->
+<div class="switch-container">
+    <div class="left-container">
+        
+       
+    </div>
+
+    <div class="right-container">
+
+    </div>
+</div>
+
+<script src="./scripts/agua.js"></script>
+<!--<script src="/Graficas/"></script>-->
+<script src="./scripts/movement.js"></script>
+<script src="nodejs-mongodb-api-master/src/index.js"></script>
+
+</body>
+</html>
+

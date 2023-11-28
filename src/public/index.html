@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable= no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/proyecto.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/sobremi.css">
+    <title>Pagina web</title>
+</head>
+
+<body>
+    <!--Sesion de inicio-->
+    <section id="inicio">
+        <div class="contenido">
+            <header>
+                <div class="contenido__header">
+                    <h1>Pagina</h1>
+                    <nav id="nav" class="">  <!--links del header--> 
+                        <ul id="links">
+                            <li><a href="#inicio" class="seleccionado" onclick="seleccionar(this)">INICIO</a></li>
+                            <li><a href="#sobremi" onclick="seleccionar(this)">TECNOLOGIAS</a></li>
+                            <li><a href="#proyectos" onclick="seleccionar(this)">PROYECTO</a></li>
+                        </ul>
+                    </nav>
+        
+                
+                </div>
+            </header>
+            <div class="presentacion">
+                <p class="bienvenida">Bienvenidos</p>
+                <h2>Somos el equipo dinamita</h2>
+                <p class="descripcion">El el siguiente apartado se mostrara la funcion de un protocolo 
+                    enlazando los datos que son enviador de Mqtt a mongo db para posteriormente presentarlos en un grafica.
+                </div>
+        </div>
+    </section>
+
+    <!--seccion sobre mi-->
+    <section id="sobremi">
+        <div class="contenedor__foto">
+            <img src="./img/mqtt-perfil.jpg" alt="">
+        </div>
+        <div class="sobremi">
+            <p class="titulo__seccion">MQTT</p>
+            <h1>¿Que es <span class="span">MQTT?</span></h1>
+            <p class="parrafo__sobremi">MQTT (Message Queuing Telemetry Transport) es un protocolo ligero de mensajería diseñado para la eficiente comunicación entre dispositivos en redes con recursos limitados. Utiliza un modelo de publicación/suscripción, donde los dispositivos pueden publicar mensajes en temas específicos y otros dispositivos se suscriben a esos temas para recibir actualizaciones.
+            <p class="parrafo__sobremi">Ofrece niveles de servicio para garantizar la entrega de mensajes según las necesidades del usuario, soporta la retención de mensajes, consume poco ancho de banda, permite conexiones persistentes y ha ganado amplia adopción en el Internet de las cosas (IoT) debido a su simplicidad y eficiencia. Un servidor MQTT (broker) facilita la comunicación entre los dispositivos.</p>
+        </div>
+
+        <div class="contenedor__foto">
+            <img src="./img/mango-perfil.png" alt="">
+        </div>
+        <div class="sobremi">
+            <p class="titulo__seccion">MONGO</p>
+            <h1>¿Que es <span class="span">Mongo?</span></h1>
+            <p class="parrafo__sobremi">
+                MongoDB es un sistema de gestión de bases de datos NoSQL que almacena datos en formato de documento BSON. Su flexibilidad para manejar datos no estructurados y su capacidad para escalar horizontalmente hacen que sea popular en aplicaciones web, desarrollo de software y proyectos de Internet de las cosas.
+            <p class="parrafo__sobremi">Con características como replicación automática, índices eficientes y soporte para consultas avanzadas, MongoDB se destaca por su capacidad para gestionar grandes volúmenes de datos de manera eficiente. Además, su licencia de código abierto y su comunidad activa de desarrolladores contribuyen a su amplia adopción.
+
+            </p>
+        </div>
+
+        
+    </section>
+
+    <!--Seccion de portafolio-->
+    <section id="proyectos">
+        <h3 class="titulo__portafolio">PROYECTO</h3>
+        <div class="fila">
+            <div class="proyecto">
+                <div class="overlay"></div>
+                  <!--aqui debe de ir la pagina de las grs¿aficas de MQTT y mongo-->
+               
+                   <!-- Contenedor del mapa -->
+            </div>
+
+                   <div id="mapa" style="height: 400px; width: 100%;"></div>
+                     <script>
+                       function inicializarMapa() {
+                           // Configura la ubicación del marcador
+
+                           var ubicacionMarcador = { lat: 19.285060261833113,lng: -103.7492418614036 };
+               
+                           // Crea un nuevo mapa en el contenedor
+                           var mapa = new google.maps.Map(document.getElementById('mapa'), {
+                               center: ubicacionMarcador,
+                               zoom: 15
+                           });
+               
+                           // Crea un marcador en la ubicación especificada
+                           var marcador = new google.maps.Marker({
+                               position: ubicacionMarcador,
+                               map: mapa,
+                               title: 'Ubicación Específica'
+                           });
+               
+                           // Agrega un evento de clic al marcador
+                           marcador.addListener('click', function() {
+                               // Redirige a otra página al hacer clic en el marcador
+                               window.location.href = "/grafica2";
+                           });
+                       }
+                   </script>
+                    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA13Wqm0DREqHB-ppji0EsbNtiAKp20eo4&callback=inicializarMapa" async defer></script>
+
+                <div class="info">
+                    <h4>Descripcion del proyecto</h4>
+                    <p>Proyecto donde se muestran graficados los datos obtenidos</p>
+                </div>
+            </div>
+    </section>
+        <footer>
+            <p>Todos los derechos reservados - 2023</p>
+            <div class="redes">
+                <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://wikipedia.com" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/brandon-chacon-venegas/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </footer>
+        <script src="/scripts/script.js"></script>
+</body>
+</html>
